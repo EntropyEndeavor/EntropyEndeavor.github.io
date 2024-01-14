@@ -9,6 +9,21 @@
     <script src="resources/colorbox/jquery.colorbox-min.js"></script>
     <link rel="icon" href="resources/favicon.png">
     <title>Birds - Entropy Endeavor</title>
+    <style>
+    table {
+      counter-reset: rowNumber;
+    }
+
+    table tbody tr::before {
+      display: table-cell;
+      counter-increment: rowNumber;
+      content: counter(rowNumber) ".";
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
   </head>
 <body> 
   <div>
@@ -29,12 +44,14 @@
     Favorite photo for each species.
   </p>
   <table class="border">
-    <tr>
+    <thead>
+      <th>No.</th>
       <th>Species</th>
       <th>Image Sample</th>
       <th>Image Date</th>
       <th>Image Location</th>
-    </tr>
+    </thead>
+    <tbody>
     <tr>
       <td><a href="https://www.allaboutbirds.org/guide/American_Coot" class="external_link">American Coot</a></td>
       <td><a class="modal" href="https://s3.amazonaws.com/entropyendeavor/birds/images/american_coot.jpg" title="American Coot">
@@ -939,6 +956,7 @@
       <td>6 November 2023</td>
       <td>Busch Wildlife<br>Missouri, USA</td>
     </tr>
+    </tbody>
   </table>
   
   
@@ -963,12 +981,14 @@
     Listed species might not be most prominent in recording.
   </p>
   <table class="border">
-    <tr>
+    <thead><tr>
+      <th>No.</th>
       <th>Species</th>
       <th>Sound Sample</th>
       <th>Sound Date</th>
       <th>Sound Location</th>
-    </tr>
+    </tr></thead>
+    <tbody>
     <tr>
       <td><a href="https://www.allaboutbirds.org/guide/Acadian_Flycatcher" class="external_link">Acadian Flycatcher</a></td>
       <td><audio controls preload="none"><source src="https://s3.amazonaws.com/entropyendeavor/birds/sound/2023-04-29_08_27.mp3">Not supported.</audio></td>
@@ -1833,6 +1853,7 @@
       <td>8 April 2023</td>
       <td>North Carolina, USA</td>
     </tr>
+    </tbody>
   </table>
   <p style="text-align: center;"><a href="#top">Top</a></p>
   
