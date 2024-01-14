@@ -1,4 +1,5 @@
 *.jpg
-*.MOV
 *.mp4
 *.png
+*.mp3
+!*.thumb.jpg
