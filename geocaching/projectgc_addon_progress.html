@@ -5,36 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../resources/style.css">
     <link rel="icon" href="../resources/favicon.png">
+    <style>
+      table, th, td {
+        padding: 5px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        min-width: 1.5em;
+        text-align: center;
+      }
+
+      table.combined {
+        padding: 0px;
+        margin-bottom: 30px;
+        border: 5px solid black;
+        width: 1328px;
+      }
+
+      table.combined td {
+        padding: 0px;
+        border: 5px solid black;
+      }
+
+      table.combined table {
+        border-style: hidden;
+        padding: 0px;
+      }
+
+      table.combined table td  {
+        width: 36px;
+        height: 36px;
+        padding: 0px;
+        border: 1px dashed black;
+      }
+    </style>
     <title>Project-GC Addon Progress - Geocaching - Entropy Endeavor</title>
   </head>
 <body> 
   <div>
     <a href="#" onclick="history.go(-1)"><img alt="Back" title="Back" class="icon" src="../resources/arrow-90-64.png"></a>
     <a href="../geocaching.html"><img alt="Up" title="Up" class="icon" src="../resources/arrow-143-64.png"></a>
-    <a href="index.html"><img alt="Home" title="Home" class="icon" src="../resources/home-3-64.png"></a>
+    <a href="../index.html"><img alt="Home" title="Home" class="icon" src="../resources/home-3-64.png"></a>
   </div>
   <h1>Project-GC Addon Progress</h1>
-  <p>This page lets you select your <a href="https://www.geocaching.com/help/index.php?pg=kb.chapter&id=7&pgid=118" class="external_link">&quot;My Finds&quot;</a> GPX file and get a report of your progress towards the Project-GC BadgeGen <a href="https://project-gc.com/w/BadgeGen#Addons" class="external_link">addons</a>. This report is generated entirely in your browser, no part of your GPX file is sent over the internet. Please expand the list below to see some limitations of this tool.</p>
+  <p>This page lets you select your <a href="https://www.geocaching.com/help/index.php?pg=kb.chapter&id=7&pgid=118" class="external_link">&quot;My Finds&quot;</a> GPX file and get a report of your progress towards the Project-GC BadgeGen <a href="https://project-gc.com/w/BadgeGen#Addons" class="external_link">addons</a>. This report is generated entirely in your browser; no part of your GPX file is sent over the internet. Please be patient if you have a large number of finds. Expand the list below to see some limitations of this tool.</p>
   
   <details>
     <summary>Limitations</summary>
     <ul>
-      <li>Lab caches are completely absent from the &quot;My Finds&quot; GPX file. All addons for the <b>Lab Cacher</b> Badge are therefore excluded. This can also cause an incorrect value for the <b>Busy Cacher</b> Badge and <b>Diverse Cacher</b> Badge addon.</li>
+      <li>Lab caches are completely absent from the &quot;My Finds&quot; GPX file. All addons for the <b>Lab Cacher</b> Badge are therefore excluded. This can also cause the value for the <b>Busy Cacher</b> Badge and <b>Diverse Cacher</b> Badge addon to be one type short.</li>
       <li>The addons for the <b>Achiever</b> Badge may be slightly incorrect as Project-GC maintains a <a href="https://project-gc.com/w/Challenge_cache#Challenge_Exceptions" class="external_link">list</a> of exceptions for classifying a cache as a challenge cache.</li>
       <li>The addons for the <b>All Around Cacher</b> Badge are excluded for three reasons:
         <ul>
-          <li>If you take advantage of the <a href="https://www.geocaching.com/help/index.php?pg=kb.chapter&id=106&pgid=807" class="external_link">solved coordinate</a> feature then the original coordinates will not be listed in the &quot;My Finds&quot; GPX file, and it is the original coordinates that are used by Project-GC for this computation.</li>
+          <li>If you take advantage of the <a href="https://www.geocaching.com/help/index.php?pg=kb.chapter&id=106&pgid=807" class="external_link">solved coordinate</a> feature, then the original coordinates will not be listed in the &quot;My Finds&quot; GPX file, and it is the original coordinates that are used by Project-GC for this computation.</li>
           <li>Your <a href="https://www.geocaching.com/account/settings/homelocation" class="external_link">home location</a> is not listed in your &quot;My Finds&quot; GPX file and would have to be entered separately.</li>
-          <li>Project-GC itself recognizes that small differences in how the angle is computed could result in different outcomes for caches near the boundaries in other tools.</li>
+          <li>Project-GC itself recognizes that small differences in how the angle is computed could result in different outcomes in other tools for caches near the boundaries.</li>
         </ul>
       </li>
       <li>You will only earn credit for a hosted event if you also logged that you attended.</li>
-      <li>The addons for the <b>High Altitude Cacher</b> Badge and <b>Low Altitude Cacher</b> are excluded as elevation information is not present in the &quot;My Finds&quot; GPX file.</li>
-      <li>The addons for the <b>Long-Distance Cacher</b> Badge are excluded as the home coordinates are not present in the &quot;My Finds&quot; GPX file. Since there are either completed or not (i.e. you can&apos;t make partial progress on them) I don&apos;t deem it important enough to have the home coordinates entered separately.</li>
+      <li>The addons for the <b>High Altitude Cacher</b> Badge and <b>Low Altitude Cacher</b> Badge are excluded as elevation information is not present in the &quot;My Finds&quot; GPX file.</li>
+      <li>The addons for the <b>Long-Distance Cacher</b> Badge are excluded as the home coordinates are not present in the &quot;My Finds&quot; GPX file. Since there are either completed or not (i.e. you can&apos;t make partial progress on them), I don&apos;t deem it important enough to allow the home coordinates entered separately.</li>
       <li>The <b>All counties</b> addon is excluded from the Country Badges as this information is not included in the &quot;My Finds&quot; GPX file.</li>
       <li>I do not know if I correctly handled cases where there are more than one found log on a cache.</li>
-      <li>Since the &quot;My Finds&quot; GPX file does not preserve order, there is no way to tell which cache should be in the &quot;Way to 81&quot; table if a D/T was first found on two caches on the same day. One will be picked randomly. Grid loops are not reported in the table.</li>
+      <li>Grid loops are not reported in the &quot;Way to 81&quot; table.</li>
     </ul>
   </details>
+  
+  <div class="report_holder"></div>
   
 </body></html>  
